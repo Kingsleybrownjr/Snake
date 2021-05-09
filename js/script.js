@@ -20,12 +20,12 @@ const main = currentTime => {
 		return;
 	}
 
+	// making a infinite game loop so the page keeps rendering
 	window.requestAnimationFrame(main);
 	const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
 
 	if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
 	lastRenderTime = currentTime;
-	console.log("render");
 
 	updateSnake();
 	updateFood();
@@ -35,7 +35,9 @@ const main = currentTime => {
 };
 
 const checkDeath = () => {
+	//Function that checks to see if player snake died
 	gameOver = outSideGrid(getSnakeHead()) || snakeIntersection();
 };
 
+// start render
 window.requestAnimationFrame(main);

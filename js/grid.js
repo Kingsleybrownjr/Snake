@@ -5,6 +5,7 @@ export const randomGridPosition = () => ({
 	y: Math.floor(Math.random() * GRID_SIZE) + 1,
 });
 
+// simply checks to see if the snake has hit the black lines or out of bounds
 export const outSideGrid = position =>
 	position.x < 1 ||
 	position.x > GRID_SIZE ||

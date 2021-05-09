@@ -1,6 +1,7 @@
 let inputDirection = { x: 0, y: 0 };
 let lastInputDirection = { x: 0, y: 0 };
 
+// add event listeners to the wasd keys so players can move the snake
 window.addEventListener("keydown", e => {
 	switch (e.key) {
 		case "w":
@@ -22,6 +23,7 @@ window.addEventListener("keydown", e => {
 	}
 });
 
+// simply retrieves the direction the player is going
 export const getInputDirection = () => {
 	lastInputDirection = inputDirection;
 
